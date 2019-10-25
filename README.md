@@ -72,7 +72,7 @@ Utilisation d'API externe (Prévisions météo, traffic)
 ### Front
 Vue.js 2 (Vue-cli)
 Composant mono-fichier
-Webpack
+Webpack (Config de prod et de dev présentes)
 HTML5
 CSS3
 SCSS
