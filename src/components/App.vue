@@ -13,7 +13,6 @@
         title=" Salon"
         href=" "
         coords="18,29,275,312"
-        shape="rect"
       >
       <area
         target="_blank"
