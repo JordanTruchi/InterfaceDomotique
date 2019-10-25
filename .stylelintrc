@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "indentation": "tab",
+    "rule-empty-line-before": ["always-multi-line", 
+                               except: ["after-single-line-comment", "first-nested"]
+                              ],
+    "block-opening-brace-space-before": "always",
+    "function-comma-space-before": "never",
+    "function-comma-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always"
+  }
+}
