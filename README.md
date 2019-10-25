@@ -69,6 +69,11 @@ L'utilisateur allume une ampoule. La marque de l'ampoule et l'action est envoyé
 
 Utilisation d'API externe (Prévisions météo, traffic)
 
+
+#### MCD
+
+![mcd](https://github.com/JordanTruchi/InterfaceDomotique/tree/master/static/img/mcd.png)
+
 ### Front
 Vue.js 2 (Vue-cli)
 Composant mono-fichier
