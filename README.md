@@ -9,11 +9,10 @@ Une fois connecté, sa maison s'affiche avec les différentes zones gérables. U
 ### <b> Au survol d'une zone </b>
     - La fond change de couleur afin de la marquer comme active et le nom de cette dernière s'affiche.
     - Le nombre d'éléments gérables dans cette pièce s'affiche au travers d'icônes caractéristiques
-    
 ---
 ### <b> Au clic d'une zone </b>
     Un menu latéral apparait avec les différents objets que l'utilisateur peut gérer.
-    
+---
 ### <b> Sur le menu latéral de la zone associée </b>
 #### <i> Gestion des luminaires </i>
     - Allumer / Éteindre toutes les lumière de la pièce
@@ -26,41 +25,62 @@ Une fois connecté, sa maison s'affiche avec les différentes zones gérables. U
     - Ouvrir / Fermer tous les volets de la pièce associée
     - Ouvrir / Fermer le volet sélectionner
 ---
-L'utilisateur a accès à une zone de recherche située dans la barre de navigation. La barre de recherche propose des résultats lors de la saisie.
-L'utilisateur peut cliquer sur un icône compte et accèder à ses différentes informations. 
+### <b> Barre de recherche </b>
+    L'utilisateur a accès à une zone de recherche située dans la barre de navigation.
+    La barre de recherche propose des résultats lors de la saisie.
+---
+### <b> Gestion de compte </b>
 
-* Sur la page compte :
-    * L'utilisateur peut ajouter des zones dans sa maison.
-        * L'utilisateur peut ajouter des objets connectés à la nouvelle zone
-    * L'utilisateur peut modifier des zones dans sa maison.
-        * L'utilisateur peut modifier la zone : nom, coordonées.
-            * Les coordoonées se gérent via un Drag & Drop directement sur l'image
-        * L'utilisateur peut ajouter, supprimer ou modifier un objet de la zone.
-    * L'utilisateur peut supprimer une zone.
-    * L'ajout d'objet connecté se fait par scan automatique (WIFI ou Bluetooth)
-    * L'utilisateur peut supprimer un objet
-    * Gérer son compte nom d'utilisateur, mot de passe, adresse, e-mail, supprimer sa maison, partager sa maison avec un ami pour qu'il puisse controler les objets en cas de vacances.
-        * La personne annexe pourra seulement controler les apapreils.
-    * Si la personne est administrateur du compte, elle pourra accéder aux différents sous utilisateurs (membre de la famille..) et les gérer.
-        * Création d'utilisateur, modification ou supression.
+L'utilisateur peut cliquer sur un icône compte et accèder à ses différentes informations.
+#### <i> Gestion des informations personnelles / Utilisateurs </i>
+    - Nom d'utilisateur, Mot de passe, Adresse postale / mail
+    - Possibilité de supprimer sa maison
+    - Partager sa maison avec un ami pour qu'il puisse controler les objets en cas de vacances. (La personne annexe pourra seulement controler les apapreils)
+    - Si la personne est administrateur du compte, elle pourra accéder aux différents sous utilisateurs (membre de la famille..) et les gérer.
+    - Création / Modificatio, / Suppression d'utilisateurs
+#### <i> Ajouter des zones dans sa maison </i>
+    Ajouter des objets connectés à la nouvelle zone (Via Wifi / Bluetooth)
+#### <i> Modifier des zones dans sa maison</i>
+    - Ajouter / Modifier / Supprimer un objet de la zone sélectionnée
+    - L'utilisateur peut modifier la zone (Nom, Coordonées, ...)
+        Les coordoonées de la zone se gérent via un Drag & Drop directement sur l'image
+
+#### <i> Supprimer une zone de la maison</i>
+    Tous les objets et parametrages des objets de la zone sont également supprimés
     
 ## Architecture
 
-
 ### Back
+Node.js
+Socket.io (event subscriber listener, real time communication)
 
 #### Base de données
+Kafka avec SGBD Cassandra
+
+Justification : 
+Permet de gérer des grandes superficies en temps réel avec un important nombre de capteurs. Il est possible de faire du machine learning par dessus afin de gérer des statistiques sur l'utilisation des objets.
+sExemple : il sera possible de faire une corrélation entre si elle existe entre la température extérieur, la température intérieur et l'inclinaison des stores.
 
 #### API
+Mise en place d'une API REST afin de gérer aussi bien les utilisateurs que les zones ou les objets.
+Cette API permettra aussi via un middleware dédié de mettre en accord l'action demandée par l'utilisateur à la bonne API et à la requête.
+Exemple : 
+L'utilisateur allume une ampoule. La marque de l'ampoule et l'action est envoyée à l'API. Notre API récupérera le bon middleware qui se chargera d'exécuter la demande entre l'utilisateur et l'API en question.
 
-
-
+Utilisation d'API externe (Prévisions météo, traffic)
 
 ### Front
-
-
-
-
+Vue.js 2 (Vue-cli)
+Composant mono-fichier
+Webpack
+HTML5
+CSS3
+SCSS
+LinterScss
+Eslint
+Axios
+Lo_dash
+Babel
 
 ## Installation
 
