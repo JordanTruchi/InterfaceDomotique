@@ -1,5 +1,36 @@
 # Interface Domotique
 
+```
+User experience
+```
+L'utilisateur se connecte avec ses identifiants (Nom d'utilisateur, mot de passe).
+Une fois connecté, sa maison s'affiche avec les différentes gérables.
+Au survol d'une zone : 
+La fond change de couleur et le nom de la zone s'affiche.
+Au clic d'une zone :
+Un menu apparait avec les différents objets que l'utilisateur peut gérer.
+
+L'utilisateur a accès à un menu permettant de gérer les objets connectés globaux de la maison (Enceinte...)
+
+## Architecture
+
+### Back
+
+#### Base de données
+
+#### API
+
+
+
+
+### Front
+
+
+
+
+
+## Installation
+
 Web project for InterfaceDomonituqe
 
 ### Prerequisites
