@@ -20,7 +20,7 @@
   "dependencies": {
     "axios": "^0.18.1",
     "babel-polyfill": "^6.26.0",
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.17.21",
     "vue": "^2.6.10"
   },
   "devDependencies": {
